@@ -49,3 +49,9 @@ Delete the file betty.
 #!/bin/bash
 rm /tmp/holberton/betty
 ```
+# Bye bye holberton
+Delete the directory holberton that is in the /tmp directory.
+```bash
+#!/bin/bash
+rmdir /tmp/holberton/
+```
