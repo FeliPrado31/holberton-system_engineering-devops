@@ -69,5 +69,5 @@ cd -
 Write a script that lists all files (even ones with names beginning with a period character, which are normally hidden) in the current directory and the parent of the working directory and the /boot directory (in this order), in long format.
 ```bash
 #!/bin/bash
-
+ls . ~/github/holberton-system_engineering-devops /boot  -al -1
 ```
