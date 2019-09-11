@@ -1,2 +1,2 @@
 #!/bin/bash
-ls . ~/github/holberton-system_engineering-devops /boot  -al -1 
+ls . ../ /boot -al
