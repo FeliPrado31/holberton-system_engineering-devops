@@ -1,6 +1,2 @@
-<<<<<<< HEAD
 #!/bin/bash
-=======
-!/bin/bash
->>>>>>> fc283256ea4ce0bf9251000eae86acee1c40ee7d
 ln -s /bin/bash __ls__
