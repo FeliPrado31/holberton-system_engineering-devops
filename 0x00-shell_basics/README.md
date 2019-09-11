@@ -11,7 +11,11 @@ command to list of your current directory.
 ls
 ```
 # There is no place like home
-...
+Write a script that changes the working directory to the user’s home directory.
+```bash
+#!/bin/bash
+cd
+```
 # The long format
 display contents in a long format
 ```bash
@@ -54,4 +58,10 @@ Delete the directory holberton that is in the /tmp directory.
 ```bash
 #!/bin/bash
 rmdir /tmp/holberton/
+```
+# Back to the future
+Write a script that changes the working directory to the previous one.
+```bash
+#!/bin/bash
+cd -
 ```
