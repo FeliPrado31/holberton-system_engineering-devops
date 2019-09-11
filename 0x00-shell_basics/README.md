@@ -24,3 +24,9 @@ including all hidden files
 #!/bin/bash
 ls -a
 ```
+# I love numbers
+Display current directory contents.
+```bash
+#!/bin/bash
+ls -al -1
+```
