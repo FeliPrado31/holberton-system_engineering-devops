@@ -43,3 +43,9 @@ Move the file betty from /tmp/ to /tmp/holberton.
 #!/bin/bash
 mv betty /tmp/holberton/
 ```
+# Bye bye betty
+Delete the file betty.
+```bash
+#!/bin/bash
+rm /tmp/holberton/betty
+```
