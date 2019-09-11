@@ -30,9 +30,16 @@ Display current directory contents.
 #!/bin/bash
 ls -al -1
 ```
+ve the file betty from /tmp/ to /tmp/holberton.
 # Welcome holberton
 creates a directory named holberton in the /tmp/ directory.
 ```bash
 #!/bin/bash
 mkdir /tmp/holberton
+```
+# Betty in Holberton
+Move the file betty from /tmp/ to /tmp/holberton.
+```bash
+#!/bin/bash
+mv betty /tmp/holberton/
 ```
