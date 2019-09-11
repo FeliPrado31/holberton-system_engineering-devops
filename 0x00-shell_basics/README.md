@@ -71,3 +71,9 @@ Write a script that lists all files (even ones with names beginning with a perio
 #!/bin/bash
 ls . ~/github/holberton-system_engineering-devops /boot  -al -1
 ```
+# File type
+Write a script that prints the type of the file named iamafile. The file iamafile will be in the /tmp directory when we will run your script.
+```bash
+#!/bin/bash
+file /tmp/iamafile
+```
