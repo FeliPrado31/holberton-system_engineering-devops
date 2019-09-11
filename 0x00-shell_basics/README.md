@@ -30,3 +30,9 @@ Display current directory contents.
 #!/bin/bash
 ls -al -1
 ```
+# Welcome holberton
+creates a directory named holberton in the /tmp/ directory.
+```bash
+#!/bin/bash
+mkdir /tmp/holberton
+```
