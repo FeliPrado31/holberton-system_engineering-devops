@@ -18,3 +18,9 @@ display contents in a long format
 #!/bin/bash
 ls -al
 ```
+# Hidden files
+including all hidden files
+```bash
+#!/bin/bash
+ls -a
+```
