@@ -10,3 +10,11 @@ command to list of your current directory.
 #!/bin/bash
 ls
 ```
+# There is no place like home
+...
+# The long format
+display contents in a long format
+```bash
+#!/bin/bash
+ls -al
+```
