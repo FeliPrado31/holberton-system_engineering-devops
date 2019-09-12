@@ -34,3 +34,9 @@ Write a script that adds execute permission to the owner of the file hello.
 #!/bin/bash
 chmod u+x hello
 ```
+# Multiple permissions
+Write a script that adds execute permission to the owner and the group owner, and read permission to other users, to the file hello.
+```bash
+#!/bin/bash
+chmod 554 hello
+```
