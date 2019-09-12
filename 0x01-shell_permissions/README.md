@@ -28,4 +28,9 @@ Write a script that creates an empty file called hello.
 #!/bin/bash
 touch hello
 ```
-
+# Execute
+Write a script that adds execute permission to the owner of the file hello.
+```bash
+#!/bin/bash
+chmod u+x hello
+```
