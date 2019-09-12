@@ -52,7 +52,7 @@ Write a script that sets the permission to the file hello as follows:
 * Other users: all the permissions
 ```bash
 #!/bin/bash
-chmod 7 hello
+chmod 007 hello
 ```
 # Look in the mirror
 Write a script that sets the mode of the file hello the same as olleh’s mode.
