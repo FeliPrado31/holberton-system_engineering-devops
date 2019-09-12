@@ -40,3 +40,9 @@ Write a script that adds execute permission to the owner and the group owner, an
 #!/bin/bash
 chmod 554 hello
 ```
+# Everybody!
+Write a script that adds execution permission to the owner, the group owner and the other users, to the file hello
+```bash
+#!/bin/bash
+chmod 751 hello
+```
