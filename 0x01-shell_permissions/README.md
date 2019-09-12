@@ -46,3 +46,11 @@ Write a script that adds execution permission to the owner, the group owner and 
 #!/bin/bash
 chmod 751 hello
 ```
+Write a script that sets the permission to the file hello as follows:
+⋅⋅* Owner: no permission at all
+⋅⋅*Group: no permission at all
+⋅⋅*Other users: all the permissions
+```bash
+#!/bin/bash
+chmod 7 hello
+```
