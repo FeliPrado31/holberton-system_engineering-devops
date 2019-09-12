@@ -2,7 +2,7 @@
 Create a script that changes your user ID to betty.
 ```bash
 #!/bin/bash
-su - betty
+su betty
 ```
 # Who am i
 Write a script that prints the effective userid of the current user.
