@@ -54,3 +54,11 @@ Write a script that sets the permission to the file hello as follows:
 #!/bin/bash
 chmod 7 hello
 ```
+# Look in the mirror
+Write a script that sets the mode of the file hello the same as olleh’s mode.
+* The file hello will be in the working directory
+* The file olleh will be in the working directory
+```bash
+#!/bin/bash
+chmod --reference=olleh hello
+```
