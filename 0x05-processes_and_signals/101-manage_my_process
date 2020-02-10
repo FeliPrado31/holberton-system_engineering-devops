@@ -3,25 +3,45 @@
 file="manage_my_process"
 pid="/var/run/my_process.pid"
 
-if [[ $1 == "start" ]]
-then
+func_start() 
+{
     touch "$pid"
     bash ./"$file" &
     echo "$!" > "$pid"
     echo "manage_my_process started"
-elif [[ $1 == "stop" ]]
-then
+}
+
+func_stop()
+{
     kill "$(cat "$pid")"
     rm "$pid"
     echo "manage_my_process stopped"
-elif [[ $1 == "restart" ]]
-then
+}
+
+func_restart()
+{
     kill "$(cat "$pid")"
     rm "$pid"
     touch "$pid"
     bash ./"$file" &
     echo "$!" > "$pid"
     echo "manage_my_process restarted"
-else
+}
+
+func_print_msg()
+{
     echo "Usage: manage_my_process {start|stop|restart}"
+}
+
+if [[ $1 == "start" ]]
+then
+    func_start
+elif [[ $1 == "stop" ]]
+then
+    func_stop
+elif [[ $1 == "restart" ]]
+then
+    func_restart
+else
+    func_print_msg
 fi
