@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# I am invincible!!! when receiving a SIGTERM signal
+# I am invincible!!! when receiving a SIGTERM signal Test
 while true
 do
     echo "To infinity and beyond"
