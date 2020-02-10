@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Create a file with the correct pid
+file="/var/run/holbertonscript.pid"
+sudo touch $file
+echo "$$" > $file
+func_quit()
+{
+    sudo rm $file
+    exit 0
+}
+
+func_kill()
+{
+    echo "I hate the kill command"
+    sudo rm $file
+    exit 0
+}
+
+
+trap "echo 'Y U no love me?!'" SIGINT
+trap func_kill SIGTERM
+trap func_quit SIGQUIT
+while :
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
