@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # I am invincible!!! when receiving a SIGTERM signal
 # Print I am invicible when try to kill the process
+# With the signal
 trap 'echo "I am invincible!!!"' SIGTERM
 while true
 do
