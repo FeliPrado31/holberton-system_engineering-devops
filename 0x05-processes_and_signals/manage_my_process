@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Creates an infinite loop
+file="/tmp/my_process"
+touch $file
+while :
+do
+    echo "I am alive!" >> $file
+    sleep 2
+done
