@@ -2,9 +2,9 @@
 # I am invincible!!! when receiving a SIGTERM signal
 # Print I am invicible when try to kill the process
 # With the signal
-trap 'echo "I am invincible!!!"' SIGTERM
 while true
 do
-  echo "To infinity and beyond"
-  sleep 2
+    echo "To infinity and beyond"
+    trap 'echo "I am invincible!!!"' SIGTERM
+    sleep 2
 done
