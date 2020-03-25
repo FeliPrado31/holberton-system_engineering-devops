@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 # Web servers are the piece of software generating and serving HTML pages, let’s install one!
 
-sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y install nginx
+# Update and install
+sudo apt-get update && sudo apt-get -y install nginx
+# Allow in the firewall
 sudo ufw allow 'Nginx HTTP'
+# edit the index
 echo 'Holberton School' > /var/www/html/index.html
-service nginx restart
+# star nginx service
+service nginx start
