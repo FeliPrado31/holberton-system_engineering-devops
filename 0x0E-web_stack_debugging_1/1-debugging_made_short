@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Using what you did for task #0, make your fix short and sweet.
-
-sudo apt-get install -y apache2
-sudo cp /usr/share/nginx/html/index.html /var/www/html/index.html
-sudo service apache2 start
+sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
+service nginx start
+pkill -o nginx
