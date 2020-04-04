@@ -4,5 +4,6 @@
 # start and destroy as many containers as you need to debug the issue. Then
 # write a Bash script with the minimum number of commands to automate your fix.
 
-sudo sed -i 's/8080/80/g'  /etc/nginx/sites-enabled/default
+sudo rm /etc/nginx/sites-enabled/default
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
