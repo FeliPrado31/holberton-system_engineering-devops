@@ -2,4 +2,5 @@
 # Using what you did for task #0, make your fix short and sweet.
 
 sudo sed -i 's/8080/80/g'  /etc/nginx/sites-enabled/default
-service nginx stop
+service nginx start
+kill "$(pgrep 'nginx' | head -1)"
