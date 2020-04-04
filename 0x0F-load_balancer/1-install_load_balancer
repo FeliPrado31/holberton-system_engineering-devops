@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Install and configure HAproxy on your lb-01 server.
+JUSTHAPPYVAR="\
+frontend load_balancer
+    bind *:80
+    mode http
+    default_backend happy
+    
+backend happy
+    balance roundrobin
+    server happy1 35.227.104.194:80 check
+    server happy2 52.201.243.73:80 check
+"
+apt-get update
+apt-get -y install haproxy
+echo "$JUSTHAPPYVAR" >> /etc/haproxy/haproxy.cfg
+service haproxy start
