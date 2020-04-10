@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Fix container adv
+# Using what you did for task #1, make your fix short and sweet.
 
 sed -i 's/Listen 8080/#Listen 8080/g' /etc/apache2/ports.conf
 sed -i 's/#user www-data;/user nginx;/g' /etc/nginx/nginx.conf
