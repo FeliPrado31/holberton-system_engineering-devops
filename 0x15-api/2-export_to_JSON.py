@@ -1,29 +1,27 @@
 #!/usr/bin/python3
 """Exports data in the JSON format"""
 
-if __name__ == "__main__":
-
-    import json
+if __name__ == '__main__':
     import requests
-    import sys
+    import json
+    from sys import argv
 
-    userId = sys.argv[1]
-    user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
-                        .format(userId))
-    todos = requests.get('https://jsonplaceholder.typicode.com/todos')
-    todos = todos.json()
+    r = requests.get('https://jsonplaceholder.typicode.com/users/{}'.
+                     format(argv[1]))
+    username = r.json().get('username')
 
-    todoUser = {}
-    taskList = []
+    r = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'.
+                     format(argv[1]))
+    data = r.json()
 
-    for task in todos:
-        if task.get('userId') == int(userId):
-            taskDic = {"task": task.get('title'),
-                       "completed": task.get('completed'),
-                       "username": user.json().get('username')}
-            taskList.append(taskDic)
-    todoUser[userId] = taskList
+    res = {}
+    res['{}'.format(argv[1])] = []
+    for task in data:
+        res['{}'.format(argv[1])].append({
+            'task': task.get('title'),
+            'completed': task.get('completed'),
+            'username': username
+        })
 
-    filename = userId + '.json'
-    with open(filename, mode='w') as f:
-        json.dump(todoUser, f)
+    with open('{}.json'.format(argv[1]), 'w') as file:
+        json.dump(res, file)

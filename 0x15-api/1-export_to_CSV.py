@@ -3,23 +3,22 @@
 for a given employee ID,
 returns information about his/her TODO list progress."""
 
-if __name__ == "__main__":
-
-    import csv
+if __name__ == '__main__':
     import requests
-    import sys
+    import csv
+    from sys import argv
 
-    userId = sys.argv[1]
-    user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
-                        .format(userId))
-    name = user.json().get('username')
-    todos = requests.get('https://jsonplaceholder.typicode.com/todos')
+    r = requests.get('https://jsonplaceholder.typicode.com/users/{}'.
+                     format(argv[1]))
+    username = r.json().get('username')
 
-    filenam = userId + '.csv'
-    with open(filenam, mode='w') as f:
-        writer = csv.writer(f, delimiter=',', quotechar='"',
-                            quoting=csv.QUOTE_ALL, lineterminator='\n')
-        for task in todos.json():
-            if task.get('userId') == int(userId):
-                writer.writerow([userId, name, str(task.get('completed')),
-                                 task.get('title')])
+    r = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'.
+                     format(argv[1]))
+    data = r.json()
+
+    with open('{}.csv'.format(argv[1]), mode='w') as f:
+        writter = csv.writer(f, delimiter=',', quotechar='"',
+                             quoting=csv.QUOTE_ALL)
+        for task in data:
+            writter.writerow([argv[1], username, task.get('completed'),
+                              task.get('title')])
