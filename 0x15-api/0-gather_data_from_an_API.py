@@ -9,7 +9,7 @@ import sys
 if __name__ == "__main__":
 
     userId = sys.argv[1]
-    api = '"https://jsonplaceholder.typicode.com'
+    api = 'https://jsonplaceholder.typicode.com'
     user = requests.get(api+'/users/'+userId)
 
     name = user.json().get('name')
