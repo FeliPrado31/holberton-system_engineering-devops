@@ -1,25 +1,19 @@
 #!/usr/bin/python3
-"""
-Write a recursive function that queries the Reddit API and returns a list
-containing the titles of all hot articles for a given subreddit. If no results
-are found for the given subreddit, the function should return None.
+"""Module recurse
 """
 from requests import *
 
 
-def recurse(subreddit, res_list=[], after=""):
+def recurse(subreddit, hot_list=[], after=""):
 
-    url = 'https://api.reddit.com/r/{}/hot?after={}'.format(subreddit, after)
-    headers = {'user-agent': 'chrome:happy/0.1.0'}
-
-    response = get(url, headers=headers).json()
-
+    api = 'https://api.reddit.com/r/{}/hot?after={}'.format(subreddit, after)
+    headers = {'User-Agent': 'happy'}
+    response = get(api, headers=headers).json()
     try:
         for data in response.get('data')['children']:
-            res_list.append(data['data']['title'])
+            hot_list.append(data['data']['title'])
         if response['data']['after'] is not None:
-            recurse(subreddit, res_list, response['data']['after'])
-        return res_list
+            recurse(subreddit, hot_list, response['data']['after'])
+        return hot_list
     except Exception:
         return None
-
