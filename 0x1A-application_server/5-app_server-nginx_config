@@ -4,8 +4,6 @@ server {
     listen      80 default_server;
     listen      [::]:80 default_server ipv6only=on;
 
-    server_name 104.196.98.227;
-
     add_header  X-Served-By 1170-web-01;
 
     location = /airbnb-onepage/ {
